@@ -32,6 +32,6 @@ try:
         time.sleep(1)
 
 except KeyboardInterrupt:
-        servo.stop()
-        GPIO.cleanup()
+    servo.stop()
+    GPIO.cleanup()
 

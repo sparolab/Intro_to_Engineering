@@ -12,7 +12,7 @@ GPIO.setwarnings(False)
 # GPIO핀의 번호 모드 설정
 GPIO.setmode(GPIO.BCM) 
 
-# 버튼 핀의 입력설정 , PULL DOWN 설정 
+# 버튼 핀의 입력설정 , PULL DOWN 설정 (기본상태가 Down인 상태)
 GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
 
 while 1:  #무한반복 

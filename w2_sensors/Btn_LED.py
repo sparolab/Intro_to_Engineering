@@ -18,12 +18,16 @@ GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(led_pin, GPIO.OUT)
 
         
-while 1:  #무한반복 
-    # 만약 버튼핀에 High(1) 신호가 들어오면, "Button pushed!" 을 출력합니다.
-    if GPIO.input(button_pin) == GPIO.HIGH:
-        print("Button pushed!")    
-        GPIO.output(led_pin,1)   # LED ON 
-    else:
-        GPIO.output(led_pin,0)   # LED OFF
-        
-    time.sleep(0.1)    # 0.1초 딜레이 
+try:        
+    while 1:  #무한반복 
+        # 만약 버튼핀에 High(1) 신호가 들어오면, "Button pushed!" 을 출력합니다.
+        if GPIO.input(button_pin) == GPIO.HIGH:
+            print("Button pushed!")    
+            GPIO.output(led_pin,1)   # LED ON 
+        else:
+            GPIO.output(led_pin,0)   # LED OFF
+            
+        time.sleep(0.1)    # 0.1초 딜레이 
+except KeyboardInterrupt:
+    GPIO.cleanup()
+
