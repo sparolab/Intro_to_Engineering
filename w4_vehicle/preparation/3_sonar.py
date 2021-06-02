@@ -25,8 +25,8 @@ distance = 1000
 
 def sonar_thread():
     global distance
-    start = 0
-    stop = 0
+    start = 0 # 초기화 수정
+    stop = 0 # 초기화 수정
     while True:
         GPIO.output(TRIG, True)
         time.sleep(0.00001)
